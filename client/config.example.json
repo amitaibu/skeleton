@@ -3,6 +3,6 @@
     "backend": "http://localhost/<%= projectName %>/www"
   },
   "production": {
-    "backend": "https://server.com"
+    "backend": "http://dev-hedley.pantheon.io"
   }
 }
