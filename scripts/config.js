@@ -1,5 +1,5 @@
 angular.module('config', [])
 
-.constant('Config', {backend:'https://server.com'})
+.constant('Config', {backend:'http://dev-hedley.pantheon.io/'})
 
 ;
