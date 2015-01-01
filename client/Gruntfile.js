@@ -421,7 +421,7 @@ module.exports = function (grunt) {
     buildcontrol: {
       dist: {
         options: {
-          remote: 'https://github.com/amitaibu/skeleton.git',
+          remote: 'https://github.com/amitaibu/pantheon-hedley.git',
           branch: 'gh-pages',
           commit: true,
           push: true

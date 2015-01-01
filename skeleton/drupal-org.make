@@ -30,6 +30,7 @@ projects[entitycache][version] = 1.2
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
+projects[entityreference][patch][] = "https://www.drupal.org/files/issues/migrate_multiple_entity_reference-2394725-4.patch"
 
 projects[entity_validator][subdir] = "contrib"
 projects[entity_validator][version] = "1.x"
@@ -74,10 +75,7 @@ projects[og_vocab][subdir] = "contrib"
 projects[og_vocab][version] = "1.2"
 
 projects[restful][subdir] = "contrib"
-projects[restful][download][type] = "git"
-projects[restful][download][url] = "https://github.com/RESTful-Drupal/restful.git"
-projects[restful][download][branch] = 340
-projects[restful][subdir] = "contrib"
+projects[restful][version] = "1.x-dev"
 
 projects[search_api][subdir] = "contrib"
 projects[search_api][version] = "1.12"
