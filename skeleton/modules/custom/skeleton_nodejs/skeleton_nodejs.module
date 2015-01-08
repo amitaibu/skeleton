@@ -1,0 +1,8 @@
+<?php
+/**
+ * @file
+ * Code for the RESTful integration.
+ */
+
+global $conf;
+$conf['nodejs_service_key'] = 'SkeletonSecretNodeJsPassword';
