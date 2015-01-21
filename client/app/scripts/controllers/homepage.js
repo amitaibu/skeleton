@@ -9,6 +9,7 @@
  */
 angular.module('clientApp')
   .controller('HomepageCtrl', function ($scope, $state, account, $log) {
+    $log.log(account);
     if (account) {
       // @todo: Remove parseInt()?
       var defaultCompanyId = parseInt(account.companies[0].id);
