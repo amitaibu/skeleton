@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('LoginCtrl', function ($scope, Auth, $state) {
+  .controller('LoginCtrl', function ($scope, Auth, $state, $auth) {
 
     // Will be FALSE during login GET period - will cause the login button to be
     // disabled.
@@ -33,5 +33,9 @@ angular.module('clientApp')
         $scope.loginButtonEnabled = true;
         $scope.loginFailed = true;
       });
+    };
+
+    $scope.authenticate = function(provider) {
+      $auth.authenticate(provider);
     };
   });

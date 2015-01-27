@@ -13,11 +13,13 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngSanitize',
+
+    'angular-loading-bar',
     'config',
     'leaflet-directive',
     'LocalStorageModule',
-    'ui.router',
-    'angular-loading-bar'
+    'satellizer',
+    'ui.router'
   ])
   .config(function($stateProvider, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider) {
 
@@ -190,6 +192,13 @@ angular
     // Configuration of the loading bar.
     cfpLoadingBarProvider.includeSpinner = false;
     cfpLoadingBarProvider.latencyThreshold = 1000;
+  })
+  .config(function($authProvider, Config) {
+
+    $authProvider.github({
+      clientId: 'e9fe6d8d6185db84d5a7',
+      url: Config.backend + '/auth/github'
+    });
   })
   .run(function ($rootScope, $state, $stateParams, $log, Config) {
     // It's very handy to add references to $state and $stateParams to the
