@@ -11,8 +11,13 @@ phantomcss.init({
   // mismatchTolerance: 1
 });
 
-casper.start('http://localhost:9000/#/login');
+var process = process || {};
+process.env = process.env || {};
+process.env.TRAVIS = process.env.TRAVIS || 'development';
 
+var baseUrl = process.env.TRAVIS ? 'http://localhost:9000' : '';
+
+casper.start(baseUrl);
 casper.viewport(1024, 768);
 
 casper.waitForSelector('.signin-body', function() {
