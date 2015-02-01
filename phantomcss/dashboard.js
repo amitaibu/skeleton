@@ -13,9 +13,10 @@ phantomcss.init({
 
 var process = process || {};
 process.env = process.env || {};
-process.env.TRAVIS = process.env.TRAVIS || 'development';
+process.env.TRAVIS = process.env.TRAVIS || false;
 
-var baseUrl = process.env.TRAVIS ? 'http://localhost:9000' : '';
+// Allow changing the base url based on Travis, or a local installation.
+var baseUrl = process.env.TRAVIS ? 'http://localhost:9000' : 'http://localhost:9000';
 
 casper.start(baseUrl);
 casper.viewport(1024, 768);
