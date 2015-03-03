@@ -163,4 +163,13 @@ class FeatureContext extends DrupalContext implements SnippetAcceptingContext {
         }
       });
   }
+
+  /**
+   * @When I goto :path
+   *
+   * Similar to "I visit :path", only without the response code assertion.
+   */
+  public function iGoto($path) {
+    $this->getSession()->visit($this->locatePath($path));
+  }
 }

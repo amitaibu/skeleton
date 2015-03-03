@@ -3,12 +3,14 @@ Feature: Company access
   As a non privileged user
   We need to be denied access to private companies
 
-  @api
+  @api @foo
   Scenario Outline: Validate anonymous user has no access to company
     Given I am an anonymous user
-    When I visit <url>
+    When I goto "<url>"
     Then I should get a "403" HTTP response
 
     Examples:
-    | url   |
-    |       |
+    | url           |
+    | node/1        |
+    | node/1/edit   |
+    | node/1/delete |
