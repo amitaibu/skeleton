@@ -6,7 +6,7 @@ use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\Behat\Tester\Exception\PendingException;
 
-class ApiContext extends DrupalContext implements SnippetAcceptingContext {
+class WebContext extends DrupalContext implements SnippetAcceptingContext {
 
   /**
    * @When /^I login with user "([^"]*)"$/

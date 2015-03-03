@@ -7,7 +7,7 @@ Feature: Company access
   Scenario Outline: Validate anonymous user has no access to company
     Given I am an anonymous user
     When I goto "<url>"
-    Then I should get a "403" HTTP response
+    Then I should get access denied
 
     Examples:
     | url           |

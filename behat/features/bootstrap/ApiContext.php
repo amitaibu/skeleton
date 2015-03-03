@@ -48,4 +48,12 @@ class ApiContext extends DrupalContext implements SnippetAcceptingContext {
   public function iGoto($path) {
     $this->getSession()->visit($this->locatePath($path));
   }
+
+  /**
+   * @Then I should get access denied
+   */
+  public function iShouldGetAccessDenied() {
+    print_r($this->getSession()->getPage()->getContent());
+    $this->assertSession()->statusCodeEquals(403);
+  }
 }
