@@ -7,6 +7,6 @@ Feature: General links and access
     Then I should get a "404" HTTP response
 
     Examples:
-    | url           |
-    | node        |
+    | url       |
+    | node      |
     | rss.xml   |
