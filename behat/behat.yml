@@ -3,7 +3,22 @@ default:
     default:
       contexts:
         - Drupal\DrupalExtension\Context\MinkContext
-        - FeatureContext
+    web_features:
+      paths:    [ %paths.base%/features/web ]
+      contexts: [ WebContext ]
+      extensions:
+        Behat\MinkExtension:
+          base_url: "http://localhost:9000"
+      filters:
+          tags: @javascript
+    api_features:
+      paths:    [ %paths.base%/features/api ]
+      contexts: [ ApiContext ]
+      extensions:
+        Behat\MinkExtension:
+          base_url: "http://localhost/skeleton/www"
+      filters:
+          tags: @api
   extensions:
     Behat\MinkExtension:
       goutte: ~
