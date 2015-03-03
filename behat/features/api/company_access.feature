@@ -3,7 +3,7 @@ Feature: Company access
   As a non privileged user
   We need to be denied access to private companies
 
-  @api @foo
+  @api
   Scenario Outline: Validate anonymous user has no access to company
     Given I am an anonymous user
     When I goto "<url>"
