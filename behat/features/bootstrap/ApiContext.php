@@ -53,7 +53,6 @@ class ApiContext extends DrupalContext implements SnippetAcceptingContext {
    * @Then I should get access denied
    */
   public function iShouldGetAccessDenied() {
-    print_r($this->getSession()->getPage()->getContent());
     $this->assertSession()->statusCodeEquals(403);
   }
 }

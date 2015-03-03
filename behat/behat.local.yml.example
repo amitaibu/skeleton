@@ -2,4 +2,13 @@ default:
   extensions:
     Drupal\DrupalExtension:
       drupal:
-        drupal_root: "/var/www/skeleton/www"
+        drupal_root: "/Library/WebServer/Documents/skeleton/www"
+api:
+  extensions:
+    Behat\MinkExtension:
+      base_url: "http://localhost/skeleton/www"
+
+web:
+  extensions:
+    Behat\MinkExtension:
+      base_url: "http://localhost:9000"
