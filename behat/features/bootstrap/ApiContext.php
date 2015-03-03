@@ -24,6 +24,8 @@ class ApiContext extends DrupalContext implements SnippetAcceptingContext {
    *   The user name.
    * @param $password
    *   The use password.
+   *
+   * @throws \Exception
    */
   protected function loginUser($name, $password) {
     $this->getSession()->visit($this->locatePath('/user'));
