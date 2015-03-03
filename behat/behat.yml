@@ -5,15 +5,16 @@ default:
         - Drupal\DrupalExtension\Context\MinkContext
     web:
       paths:    [ %paths.base%/features/web ]
-      contexts: [ WebContext ]
-      extensions:
-        Behat\MinkExtension:
-          base_url: "http://localhost:9000"
+      contexts:
+        - Drupal\DrupalExtension\Context\MinkContext
+        - WebContext
       filters:
           tags: @javascript
     api:
       paths:    [ %paths.base%/features/api ]
-      contexts: [ ApiContext ]
+      contexts:
+        - Drupal\DrupalExtension\Context\MinkContext
+        - ApiContext
       filters:
           tags: @api
   extensions:
