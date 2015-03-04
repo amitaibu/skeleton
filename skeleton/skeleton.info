@@ -29,6 +29,7 @@ dependencies[] = features
 dependencies[] = flag
 dependencies[] = geolocation
 dependencies[] = geolocation_html5
+dependencies[] = googleanalytics
 dependencies[] = libraries
 dependencies[] = message
 dependencies[] = migrate
@@ -44,6 +45,8 @@ dependencies[] = strongarm
 dependencies[] = token
 dependencies[] = views
 dependencies[] = views_bulk_operations
+dependencies[] = xmlsitemap
+dependencies[] = xmlsitemap_node
 
 ; Skeleton
 dependencies[] = skeleton_company
