@@ -17,9 +17,8 @@ class ApiContext extends DrupalContext implements SnippetAcceptingContext {
   protected $baseUrl;
 
 
-  public function __construct($base_url) {
-    // @todo: Remove hardcode, and take it from the yml file.
-    $this->baseUrl = 'http://localhost/skeleton/www';
+  public function __construct($parameters) {
+    $this->baseUrl = $parameters['base_url'];
   }
 
   /**

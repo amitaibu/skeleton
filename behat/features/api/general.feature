@@ -19,7 +19,7 @@ Feature: General functionality, links and access
     Then I should get a "200" HTTP response
 
 
-  @api @foo
+  @api
   Scenario: Validate Google Analytics is enabled
     Given I am an anonymous user
     When  I am at "/"

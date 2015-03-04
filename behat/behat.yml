@@ -5,18 +5,12 @@ default:
         - Drupal\DrupalExtension\Context\MinkContext
     web:
       paths:    [ %paths.base%/features/web ]
-      contexts:
-        - Drupal\DrupalExtension\Context\MinkContext
-        - WebContext
       filters:
-          tags: @javascript
+        tags: @javascript
     api:
       paths:    [ %paths.base%/features/api ]
-      contexts:
-        - Drupal\DrupalExtension\Context\MinkContext
-        - ApiContext
       filters:
-          tags: @api
+        tags: @api
   extensions:
     Behat\MinkExtension:
       goutte: ~
@@ -24,6 +18,7 @@ default:
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: "drupal"
+
 
 imports:
   - behat.local.yml
