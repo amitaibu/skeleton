@@ -22,6 +22,7 @@ Feature: General functionality, links and access
   @api @foo
   Scenario: Validate Google Analytics is enabled
     Given I am an anonymous user
-    When I am at "/"
-    Then I should see the text "(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]"
+    When  I am at "/"
+    Then  I should see the text "(function(i,s,o,g,r,a,m)"
+    And   I should see the text "GoogleAnalyticsObject"
 
