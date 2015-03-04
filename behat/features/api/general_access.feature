@@ -1,6 +1,6 @@
 Feature: General links and access
 
-  @api @foo
+  @api
   Scenario Outline: Validate anonymous user has no access to company
     Given I am an anonymous user
     When I goto "<url>"

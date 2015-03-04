@@ -5,8 +5,37 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\Behat\Tester\Exception\PendingException;
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 class WebContext extends DrupalContext implements SnippetAcceptingContext {
+
+  /**
+   * The base URL for the scenario.
+   *
+   * @var string
+   */
+  protected $baseUrl;
+
+
+  public function __construct($base_url) {
+    // @todo: Remove hardcode, and take it from the yml file.
+    $this->baseUrl = 'http://localhost:9000';
+  }
+
+  /**
+   * @BeforeScenario
+   *
+   * Set the base URL per suite.
+   */
+  public function setBaseUrl(BeforeScenarioScope $scope) {
+    $environment = $scope->getEnvironment();
+
+    foreach ($environment->getContexts() as $context) {
+      if ($context instanceof \Behat\MinkExtension\Context\RawMinkContext) {
+        $context->setMinkParameter('base_url', $this->baseUrl);
+      }
+    }
+  }
 
   /**
    * @When /^I login with user "([^"]*)"$/
