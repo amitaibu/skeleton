@@ -8,7 +8,7 @@
 ################################################################################
 
 
-GENERATOR_FOLDER="/Applications/MAMP/htdocs/generator-hedley"
+GENERATOR_FOLDER="/Library/WebServer/Documents/generator-hedley"
 
 # Client
 rsync -avz --exclude-from 'sync_hedley_exclude.txt' ./client $GENERATOR_FOLDER/app/templates

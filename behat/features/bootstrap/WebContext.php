@@ -5,8 +5,36 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\Behat\Tester\Exception\PendingException;
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
-class FeatureContext extends DrupalContext implements SnippetAcceptingContext {
+class WebContext extends DrupalContext implements SnippetAcceptingContext {
+
+  /**
+   * The base URL for the scenario.
+   *
+   * @var string
+   */
+  protected $baseUrl;
+
+
+  public function __construct($parameters) {
+    $this->baseUrl = $parameters['base_url'];
+  }
+
+  /**
+   * @BeforeScenario
+   *
+   * Set the base URL per suite.
+   */
+  public function setBaseUrl(BeforeScenarioScope $scope) {
+    $environment = $scope->getEnvironment();
+
+    foreach ($environment->getContexts() as $context) {
+      if ($context instanceof \Behat\MinkExtension\Context\RawMinkContext) {
+        $context->setMinkParameter('base_url', $this->baseUrl);
+      }
+    }
+  }
 
   /**
    * @When /^I login with user "([^"]*)"$/
@@ -162,5 +190,14 @@ class FeatureContext extends DrupalContext implements SnippetAcceptingContext {
           throw $e;
         }
       });
+  }
+
+  /**
+   * @When I goto :path
+   *
+   * Similar to "I visit :path", only without the response code assertion.
+   */
+  public function iGoto($path) {
+    $this->getSession()->visit($this->locatePath($path));
   }
 }

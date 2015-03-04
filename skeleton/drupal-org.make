@@ -21,8 +21,7 @@ projects[email][subdir] = "contrib"
 projects[email][version] = "1.3"
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = "1.5"
-projects[entity][patch][] = "https://www.drupal.org/files/issues/2264079-entity-wrapper-access-single-entity-reference-2.patch"
+projects[entity][version] = "1.6"
 projects[entity][patch][] = "https://www.drupal.org/files/issues/2086225-entity-access-check-node-create-3.patch"
 
 projects[entitycache][subdir] = "contrib"
@@ -46,6 +45,9 @@ projects[flag][version] = "3.5"
 
 projects[geolocation][subdir] = "contrib"
 projects[geolocation][version] = "1.6"
+
+projects[google_analytics][subdir] = "contrib"
+projects[google_analytics][version] = "2.1"
 
 projects[jquery_update][subdir] = "contrib"
 projects[jquery_update][version] = "2.4"
@@ -93,10 +95,13 @@ projects[token][subdir] = "contrib"
 projects[token][version] = "1.5"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.8"
+projects[views][version] = "3.10"
 
 projects[views_bulk_operations][subdir] = "contrib"
 projects[views_bulk_operations][version] = "3.2"
+
+projects[xmlsitemap][subdir] = "contrib"
+projects[xmlsitemap][version] = "2.2"
 
 ; Development
 projects[devel][subdir] = "development"

@@ -3,15 +3,22 @@ default:
     default:
       contexts:
         - Drupal\DrupalExtension\Context\MinkContext
-        - FeatureContext
+    web:
+      paths:    [ %paths.base%/features/web ]
+      filters:
+        tags: @javascript
+    api:
+      paths:    [ %paths.base%/features/api ]
+      filters:
+        tags: @api
   extensions:
     Behat\MinkExtension:
       goutte: ~
       selenium2: ~
-      base_url: "http://localhost:9000/"
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: "drupal"
+
 
 imports:
   - behat.local.yml

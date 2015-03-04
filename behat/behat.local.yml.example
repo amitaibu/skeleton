@@ -1,4 +1,17 @@
 default:
+  suites:
+    web:
+      contexts:
+        - Drupal\DrupalExtension\Context\MinkContext
+        - WebContext:
+            parameters:
+              base_url: "http://localhost:9000"
+    api:
+      contexts:
+        - Drupal\DrupalExtension\Context\MinkContext
+        - ApiContext:
+            parameters:
+              base_url: "http://localhost/skeleton/www"
   extensions:
     Drupal\DrupalExtension:
       drupal:

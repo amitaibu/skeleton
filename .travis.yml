@@ -86,7 +86,8 @@ script:
 
   # Run behat tests.
   - cd ../behat
-  - ./bin/behat --tags=~@wip
+  - ./bin/behat --suite=web --tags=~@wip
+  - ./bin/behat --suite=api --tags=~@wip
 
   # Print logs.
   - cat ~/grunt.log
