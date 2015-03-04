@@ -16,7 +16,6 @@ class ApiContext extends DrupalContext implements SnippetAcceptingContext {
    */
   protected $baseUrl;
 
-
   public function __construct($parameters) {
     $this->baseUrl = $parameters['base_url'];
   }
